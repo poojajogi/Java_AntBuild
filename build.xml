@@ -15,21 +15,6 @@
 
   <!-- Targets -->
 
-
-
-  <target name="compile"  description="Compile all sources.">
-    <mkdir dir="${dist.dir}"/>
-    <mkdir dir="${build.dir}/classes"/>
-    <javac srcdir="${src.dir}" destdir="${build.dir}/classes"
-           optimize="on" debug="on" deprecation="on" includeantruntime="no">
-      <compilerarg value="-Xlint"/>
-      <classpath refid="build.classpath"/>
-    </javac>
-    <copy todir="${build.dir}/classes">
-      <fileset dir="${src.dir}" excludes="**/*.java"/>
-    </copy>
-  </target>
-
   <target name="jar" depends="compile"
           description="Generate the jarfile distributable.">
     <jar destfile="${dist.dir}/${base.name}.jar"
