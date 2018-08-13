@@ -15,7 +15,7 @@
 
   <!-- Targets -->
 
-  <target name="jar" depends="compile"
+  <target name="jar">
           description="Generate the jarfile distributable.">
     <jar destfile="${dist.dir}/${base.name}.jar"
          basedir="${build.dir}/classes">
@@ -32,7 +32,7 @@
     </jar>
   </target>
 
-  <target name="run" depends="compile" description="Run the application.">
+  <target name="run"  description="Run the application.">
     <java classname="${main.class}" classpath="${build.dir}/classes" fork="yes">
       <classpath refid="runtime.classpath"/>
       <arg value="--name"/>
