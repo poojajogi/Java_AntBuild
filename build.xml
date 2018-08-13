@@ -15,7 +15,7 @@
 
   <!-- Targets -->
 
-  <target name="jar">
+  <target name="jar"
           description="Generate the jarfile distributable.">
     <jar destfile="${dist.dir}/${base.name}.jar"
          basedir="${build.dir}/classes">
